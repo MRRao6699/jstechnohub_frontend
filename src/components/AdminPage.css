@@ -1,0 +1,222 @@
+/* --- Base Styles (Desktop First) --- */
+
+.admin-container {
+    background-color: #f4f7fc;
+    min-height: 100vh;
+}
+
+.admin-tabs {
+    display: flex;
+    background-color: #ffffff;
+    padding: 0 1.5rem;
+    border-bottom: 2px solid #e0e5eb;
+}
+
+.tab-button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #7f8c8d;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.tab-button.active {
+    color: #ffffff;
+    background-color: #2980b9;
+    border-bottom-color: #3498db;
+}
+
+.tab-content {
+    padding: 1.5rem;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 2rem;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.section-header, .enquiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-header { border-bottom: 1px solid #e0e5eb; }
+
+.section-header h2 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin: 0;
+}
+
+.enquiry-header {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+}
+
+.enquiry-header h2 { margin: 0; font-size: 1.8rem; font-weight: 700; }
+.enquiry-header span { font-size: 1rem; background-color: rgba(255, 255, 255, 0.15); padding: 0.5rem 1rem; border-radius: 20px; }
+
+.form-container.card { max-width: 800px; margin: 0 auto; }
+.form-container h3 { text-align: center; font-size: 1.75rem; color: #2c3e50; margin-bottom: 2rem; }
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #555; }
+.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; box-sizing: border-box; }
+.form-row { display: flex; gap: 1.5rem; }
+.form-row .form-group { flex: 1; }
+.form-actions { display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2rem; border-top: 1px solid #e0e5eb; padding-top: 1.5rem; }
+
+.admin-course-list { display: grid; gap: 1rem; }
+.admin-course-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem; border: 1px solid #e0e5eb; border-radius: 8px; }
+.course-info h4 { margin: 0; }
+.course-info p { margin: 0; color: #555; font-size: 0.9rem;}
+.course-actions button { margin-left: 0.5rem; }
+
+.enquiry-table-container { overflow-x: auto; }
+.enquiry-table { width: 100%; border-collapse: collapse; }
+.enquiry-table th, .enquiry-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #e0e5eb; }
+.enquiry-table th { font-size: 0.9rem; text-transform: uppercase; background-color: #2c3e50; color: #fff; }
+.message-cell { max-width: 300px; white-space: pre-wrap; word-break: break-word; }
+.status-badge { padding: 0.3rem 0.6rem; border-radius: 12px; font-weight: bold; font-size: 0.8rem; }
+.status-badge.status-pending { background-color: #fff0f0; color: #e74c3c; }
+.status-badge.status-clarified { background-color: #eefcf3; color: #2ecc71; }
+
+button { cursor: pointer; border-radius: 6px; font-size: 0.9rem; padding: 0.6rem 1.2rem; border: none; font-weight: 600; transition: all 0.2s ease; }
+.btn-add-new, .btn-submit, .btn-toggle-status, .btn-edit, .btn-delete { color: white; }
+.btn-add-new { background-color: #3498db; } .btn-add-new:hover { background-color: #2980b9; }
+.btn-edit { background-color: #f39c12; }
+.btn-delete { background-color: #e74c3c; }
+.btn-toggle-status { background-color: #9b59b6; }
+.btn-cancel { background-color: #ecf0f1; color: #7f8c8d; } .btn-cancel:hover { background-color: #bdc3c7; }
+.btn-submit { background-color: #2ecc71; } .btn-submit:hover { background-color: #27ae60; }
+.form-message { text-align: center; margin-top: 1rem; font-weight: bold; padding: 0.8rem; border-radius: 6px; }
+.form-message.success { background-color: #eefcf3; color: #27ae60; }
+.form-message.error { background-color: #fff0f0; color: #e74c3c; }
+
+.review-table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.review-table th, .review-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.review-table tr.approved {
+  background-color: #e6ffed;
+}
+
+.review-table tr.pending {
+  background-color: #fff4e6;
+}
+
+.btn-toggle-status {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-toggle-status.approved-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-toggle-status.pending-btn {
+  background-color: #ffc107;
+  color: black;
+}
+
+/* --- RESPONSIVE STYLES (Mobile & Tablet) --- */
+@media (max-width: 768px) {
+    .admin-tabs {
+        flex-wrap: wrap; /* Allow tabs to wrap onto the next line */
+        padding: 0.5rem;
+    }
+    .tab-button {
+        flex-grow: 1; /* Allow tabs to grow and fill space */
+        font-size: 0.9rem;
+        padding: 0.8rem 0.5rem;
+    }
+
+    .tab-content { padding: 1rem; }
+    .card { padding: 1.5rem; }
+
+    .section-header, .enquiry-header, .admin-course-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .section-header h2, .enquiry-header h2 { font-size: 1.3rem; }
+
+    .form-row {
+        flex-direction: column; /* Stack form fields */
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse; /* Stack buttons, submit on top */
+    }
+    .form-actions button {
+        width: 100%;
+    }
+
+    /* --- RESPONSIVE TABLE MAGIC --- */
+    .enquiry-table-container { overflow-x: hidden; } /* Hide horizontal scroll on mobile */
+    .enquiry-table thead { display: none; } /* Hide the original table header */
+    .enquiry-table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #e0e5eb;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .enquiry-table td {
+        display: block;
+        text-align: right; /* Align content to the right */
+        padding-left: 50%; /* Make space for the label */
+        position: relative;
+        border-bottom: 1px dotted #ccc;
+    }
+    .enquiry-table td:last-child { border-bottom: none; }
+
+    /* Create the labels using the data-label attribute from JSX */
+    .enquiry-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #34495e;
+    }
+}

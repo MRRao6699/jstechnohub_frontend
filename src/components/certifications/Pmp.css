@@ -1,0 +1,342 @@
+/* --- STYLES FOR THE CERTIFICATION DETAIL PAGE --- */
+
+.cert-detail-container {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero Banner Section */
+.cert-detail-hero {
+    background: linear-gradient(to right, var(--heading-color), var(--primary-color));
+    color: white; /* Changed from red to white for better readability */
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.cert-detail-hero h1 {
+    font-size: 2.8rem;
+    margin: 0 0 0.5rem;
+}
+
+.cert-detail-hero p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Main Two-Column Layout */
+.cert-detail-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* Left Column: Content */
+.cert-detail-content h2 {
+    font-size: 2rem;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cert-detail-content h3 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin-top: 2rem;
+}
+
+.cert-detail-content p,
+.cert-detail-content li {
+    line-height: 1.8;
+    color: #555;
+}
+
+.cert-detail-content ul {
+    list-style: '✓  ';
+    padding-left: 1.2rem;
+}
+
+/* Right Column: Sidebar Enquiry Form */
+.cert-detail-sidebar {
+    /* This will make the form stick when scrolling on desktop */
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.enquiry-form-wrapper-detail {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.enquiry-form-wrapper-detail h3 {
+    text-align: center;
+    margin: 0 0 1.5rem;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+}
+
+.enquiry-form-detail input,
+.enquiry-form-detail textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.enquiry-form-detail input:focus,
+.enquiry-form-detail textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+.btn-submit-detail {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit-detail:hover {
+    background-color: var(--primary-color);
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 992px) {
+    .cert-detail-main {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-detail-sidebar {
+        position: static; /* Un-stick the form on mobile */
+        margin-top: 2rem;
+    }
+
+    .cert-detail-hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+
+.hightlite{
+
+    background: url(../../../public/img/highlight.png) no-repeat right;
+    background-size: 100%;
+    padding: 7px 5px 0px 10px;
+}
+
+.congrats-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.congrats-section .highlight {
+  color: purple;
+  font-weight: bold;
+}
+
+.congrats-img {
+  width: 150px;
+  margin-top: 20px;
+}
+
+
+
+.container {
+  font-family: 'Arial', sans-serif;
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.main-heading h1 {
+  font-size: 2.2rem;
+  line-height: 1.4;
+}
+
+
+
+.certification-badge {
+  background-color: #f2f2f2;
+  margin: 20px 0;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.certification-badge .badge {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.career-impact {
+  margin-top: 40px;
+}
+
+.career-title {
+  font-size: 1.5rem;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.impact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.industry-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.industry-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.label {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.source {
+  font-size: 14px;
+  color: #666;
+  margin-top: 30px;
+}
+
+
+.pmp-card {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pmp-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.pmp-image img {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pmp-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.pmp-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pmp-bar {
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(to bottom, #d500f9, #ff4081);
+  border-radius: 4px;
+}
+
+.pmp-role {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.pmp-company {
+  color: #c2185b;
+  font-weight: 600;
+}
+
+.pmp-description {
+  color: #333;
+  line-height: 1.6;
+}
+
+.pmp-quote {
+  background-color: #1976d2;
+  color: #fff;
+  padding: 20px 30px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+
+.pmp-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .pmp-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pmp-image img {
+    width: 140px;
+    height:140px
+  }
+}
