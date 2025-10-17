@@ -1,0 +1,23 @@
+.stats-card {
+  flex: 1;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  min-width: 200px;
+}
+
+.stats-card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.stats-card .percent {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.stats-card .desc {
+  color: #333;
+}

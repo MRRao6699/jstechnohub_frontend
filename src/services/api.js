@@ -39,8 +39,13 @@
 
 import axios from 'axios';
 
+<<<<<<< HEAD
 const API_URL = 'https://coachingwebsite-production.up.railway.app/api';
 //const API_URL = 'http://localhost:8080/api';
+=======
+// const API_URL = 'https://coachingwebsite-production.up.railway.app/api';
+const API_URL = 'http://localhost:8080/api';
+>>>>>>> f6902d5fca2eaace9a6699115f56f57dfe0f9bb5
 
 const api = axios.create({
   baseURL: API_URL,

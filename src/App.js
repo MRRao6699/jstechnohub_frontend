@@ -18,11 +18,19 @@ import TermsPage from './components/TermsPage';
 import CancellationPolicyPage from './components/CancellationPolicyPage';
 import PaymentSuccessPage from './components/PaymentSuccessPage';
 import InterviewQuestionsPage from './components/InterveiwQuestionPage';
+<<<<<<< HEAD
+=======
+
+>>>>>>> f6902d5fca2eaace9a6699115f56f57dfe0f9bb5
 // CORRECTED: Import paths now point to the 'blog' subfolder
 //import BlogPage from './components/BlogPage';
 //import SinglePostPage from './components/SinglePostPage';
 
 import './App.css';
+<<<<<<< HEAD
+=======
+import Pmp from './components/certifications/Pmp';
+>>>>>>> f6902d5fca2eaace9a6699115f56f57dfe0f9bb5
 
 function AppLogic() {
     const navigate = useNavigate();
@@ -48,6 +56,10 @@ function AppLogic() {
         return false;
     };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f6902d5fca2eaace9a6699115f56f57dfe0f9bb5
     const handleLogout = () => {
         sessionStorage.removeItem('isAdminAuthenticated');
         setIsAuthenticated(false);
@@ -121,6 +133,11 @@ function AppLogic() {
                     {isAuthenticated && (
                         <NavLink to="/admin" className="nav-item" onClick={closeMenu}>Admin Panel</NavLink>
                     )}
+<<<<<<< HEAD
+=======
+                    {isAuthenticated && <li className="nav-item" onClick={handleLogout} style={{cursor:'pointer'}}>Logout</li>}
+
+>>>>>>> f6902d5fca2eaace9a6699115f56f57dfe0f9bb5
                 </nav>
                 
                 {isMenuOpen && <div className="nav-overlay" onClick={closeMenu}></div>}
@@ -132,6 +149,10 @@ function AppLogic() {
                     <Route path="/courses" element={<CoursesPage />} />
                     <Route path="/course/:id" element={<CourseDetail />} />
                     <Route path="/certifications" element={<CertificationsListPage />} />
+<<<<<<< HEAD
+=======
+                    <Route path="/certifications/pmp" element={<Pmp/>} />
+>>>>>>> f6902d5fca2eaace9a6699115f56f57dfe0f9bb5
                     <Route path="/certifications/:certId" element={<CertificationsPage />} />
                     <Route path="/resume" element={<ResumePage />} />
                     <Route path="/services" element={<ServicesPage />} />

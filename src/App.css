@@ -56,7 +56,12 @@ body {
 }
 
 .nav-item {
+<<<<<<< HEAD
   padding: 0 1rem;
+=======
+  padding: 0 0.5rem;
+  font-size: 14px;
+>>>>>>> f6902d5fca2eaace9a6699115f56f57dfe0f9bb5
   height: var(--header-height);
   display: flex;
   align-items: center;

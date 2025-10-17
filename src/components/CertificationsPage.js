@@ -60,9 +60,8 @@ function CertificationsPage() {
   // Convert slug (aws-solutions-architect) -> Aws Solutions Architect
   const certificationTitle = certId
     .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-
+    .map(word =>  word.slice(0))
+    .join(' ').toUpperCase();
   // Local state for form fields & status
   const [formData, setFormData] = useState({
     name: '',
