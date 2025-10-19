@@ -205,7 +205,7 @@ attempt.
        <div className="congrats-section"> 
         <h3>🎉 <span className="highlight">CONGRATS!</span></h3>
         <p>You're now an in-demand <strong>PMP® certified Project Management Professional!</strong></p>
-      <img src='img/congrats.png' alt="Celebration" className="congrats-img" />
+      <img src='/img/congrats.png' alt="Celebration" className="congrats-img" />
       </div>
       </div>
 
