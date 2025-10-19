@@ -62,7 +62,6 @@ function CertificationsPage() {
     .split('-')
     .map(word =>  word.slice(0))
     .join(' ').toUpperCase();
-
   // Local state for form fields & status
   const [formData, setFormData] = useState({
     name: '',
