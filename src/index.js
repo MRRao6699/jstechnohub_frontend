@@ -3,12 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-<<<<<<< HEAD
-=======
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
->>>>>>> f6902d5fca2eaace9a6699115f56f57dfe0f9bb5
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
