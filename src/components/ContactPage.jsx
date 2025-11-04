@@ -158,6 +158,7 @@ const ContactForm = ({ certificationName }) => {
             fontSize: '14px',
             borderRadius: '6px',
             border: '1px solid #ccc',
+            height:'42px',
           }}
           required
         />
