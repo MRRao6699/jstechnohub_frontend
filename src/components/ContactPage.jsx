@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './ContactPage.module.css';
 import { submitCertificationEnquiry } from '../services/api'; // API call for certificate enquiries
 import PhoneInput from "react-phone-input-2";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 import "react-phone-input-2/lib/style.css"
 // The 'import coachPhoto' line has been removed.
 
@@ -41,16 +42,22 @@ const ContactForm = ({ certificationName }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-        setErrors({ ...errors, phone: '' }); // clear error
-
-  };
-
-   const handlePhoneChange = (value) => {
-    setFormData({ ...formData, phone: value });
     setErrors({ ...errors, phone: '' }); // clear error
 
   };
- const validateForm = () => {
+
+  const handlePhoneChange = (value, countryData) => {
+    // The value from react-phone-input-2 does NOT include '+' by default
+    const phoneWithPlus = value.startsWith('+') ? value : `+${value}`;
+    setFormData({
+      ...formData,
+      phone: phoneWithPlus,           // store with + prefix
+      countryCode: countryData.countryCode, // e.g. "in", "us"
+    });
+    setErrors({ ...errors, phone: '' });
+  };
+
+  const validateForm = () => {
     const newErrors = {};
     const nameRegex = /^[A-Za-z\s]{3,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -67,11 +74,17 @@ const ContactForm = ({ certificationName }) => {
       newErrors.email = 'Enter a valid email address.';
     }
 
-    const phoneDigits = formData.phone.replace(/\D/g, '');
     if (!formData.phone) {
       newErrors.phone = 'Phone number is required.';
-    } else if (phoneDigits.length < 10) {
-      newErrors.phone = 'Enter a valid 10-digit phone number.';
+    } else {
+      try {
+        const phoneNumber = parsePhoneNumberFromString(formData.phone);
+        if (!phoneNumber || !phoneNumber.isValid()) {
+          newErrors.phone = `Invalid phone number for ${formData.countryCode.toUpperCase()}`;
+        }
+      } catch {
+        newErrors.phone = 'Invalid phone number format.';
+      }
     }
 
     if (!formData.message.trim()) {
@@ -87,15 +100,16 @@ const ContactForm = ({ certificationName }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-          if (!validateForm()) return; // stop if validation fails
+    if (!validateForm()) return; // stop if validation fails
 
     setIsSubmitting(true);
-        setStatus(null);
+    setStatus(null);
 
 
 
     const payload = {
       ...formData,
+
       certificationName: certificationName || 'General Inquiry', // optional
     };
 
@@ -158,7 +172,7 @@ const ContactForm = ({ certificationName }) => {
             fontSize: '14px',
             borderRadius: '6px',
             border: '1px solid #ccc',
-            height:'42px',
+            height: '42px',
           }}
           required
         />
@@ -209,18 +223,18 @@ const ContactForm = ({ certificationName }) => {
 
 // Section 4: FAQ Component (No changes)
 const FAQ = () => (
-    <div className={styles.faqSection}>
-      <h2>Common Questions</h2>
-      <div className={styles.faqItem}>
-        <h4>What happens during a discovery call?</h4>
-        <p>The discovery call is a relaxed chat where we explore your goals and challenges. It's a chance for you to ask questions and for us to see if we're a good fit to work together. There's absolutely no pressure to sign up.</p>
-      </div>
-      <div className={styles.faqItem}>
-        <h4>What are your coaching package prices?</h4>
-        <p>I offer several coaching packages tailored to different needs. We can discuss the best option for you during our discovery call, or you can find more details on my <a href="/services">Services Page</a>.</p>
-      </div>
+  <div className={styles.faqSection}>
+    <h2>Common Questions</h2>
+    <div className={styles.faqItem}>
+      <h4>What happens during a discovery call?</h4>
+      <p>The discovery call is a relaxed chat where we explore your goals and challenges. It's a chance for you to ask questions and for us to see if we're a good fit to work together. There's absolutely no pressure to sign up.</p>
     </div>
-  );
+    <div className={styles.faqItem}>
+      <h4>What are your coaching package prices?</h4>
+      <p>I offer several coaching packages tailored to different needs. We can discuss the best option for you during our discovery call, or you can find more details on my <a href="/services">Services Page</a>.</p>
+    </div>
+  </div>
+);
 
 // Main Page Component (No changes)
 const ContactPage = () => {
